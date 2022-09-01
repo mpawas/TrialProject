@@ -1,0 +1,31 @@
+<form method="POST" enctype="multipart/form-data" action="/api/v1/admin/addsubcategory">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="bmd-label-floating">Name</label>
+          <input type="text" name="name" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for='cars' class="bmd-label-floating">Status</label>
+          <select name="category" id="cars">
+              <% category.forEach(element => { %>
+                <option value="<%- element.id %> "><%- element.name %> </option>
+              <% }) %>
+          </select>
+        </div>
+      </div>
+    </div>
+    <input type="file" name="subcategoryimage">
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <!-- <label class="bmd-label-floating">Subscription Duration (In no of days)</label> -->
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary pull-right">Update Subscription</button>
+    <div class="clearfix"></div>
+  </form>
